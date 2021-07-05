@@ -12,7 +12,6 @@ import os
 import re
 import glob
 import modules.commons
-from installer import Installer
 from commandutils import CommandUtils
 
 class OstreeInstaller(object):
