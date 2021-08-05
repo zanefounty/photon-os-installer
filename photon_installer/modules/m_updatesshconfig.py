@@ -8,7 +8,7 @@ import subprocess
 import commons
 
 install_phase = commons.POST_INSTALL
-enabled = True
+enabled = False
 
 def execute(installer):
     if 'public_key' not in installer.install_config:
