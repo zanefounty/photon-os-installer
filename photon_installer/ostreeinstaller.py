@@ -181,9 +181,9 @@ class OstreeInstaller(object):
             with open(os.path.join(partition_data['bootefi'], 'boot/grub2/grub.cfg'), "w") as grub_cfg:
                 grub_cfg.write("search -n -u {} -s\n".format(self._get_uuid(self.install_config['partitions_data']['boot'])))
                 grub_cfg.write("configfile {}grub2/grub.cfg\n".format(self.install_config['partitions_data']['bootdirectory']))
-            self.run([['chroot', '{}'.format(deployment), 'bash', '-c', 'mkdir -p /boot/grub2;']], "Create /boot/grub2")
+            self.run([['chroot', '{}'.format(deployment), 'bash', '-c', 'mkdir -p /boot/grub2;']])
         self.run([['chroot', '{}'.format(deployment), 'bash', '-c', 'grub2-mkconfig -o {}/grub2/grub.cfg;'
-                .format(partition_data['bootdirectory'])]], "Setting grub2-mkconfig")
+                 .format(partition_data['bootdirectory'])]])
 
         if bootmode == 'dualboot' or bootmode == 'efi':
             setup_efi = []
