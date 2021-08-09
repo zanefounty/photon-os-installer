@@ -32,6 +32,7 @@ class OstreeInstaller(object):
         self._get_uuid = installer._get_uuid
         self._get_partuuid = installer._get_partuuid
         self.cmd = CommandUtils(self.logger)
+        os.environ["SYSTEMD_LOG_LEVEL"] = "debug"
 
     def get_ostree_repo_url(self):
         self.default_repo = self.install_config['ostree'].get('default_repo', False);
