@@ -400,9 +400,9 @@ class Installer(object):
             self._setup_network()
             self._finalize_system()
             self._cleanup_install_repo()
+            self._setup_grub()
             self._create_fstab()
-        self._setup_grub()
-        self._execute_modules(modules.commons.POST_INSTALL)
+         self._execute_modules(modules.commons.POST_INSTALL)
         self._disable_network_in_chroot()
         self._unmount_all()
 
